@@ -34,7 +34,9 @@ var express     = require('express'),
     http        = require('http'),
     redis       = require('redis'),
     RedisStore  = require('connect-redis')(express),
-    hashlib     = require('hashlib');
+    hashlib     = require('hashlib'),
+    expressNsp  = require('express-namespace');
+
 
 // Configuration
 try {
@@ -99,9 +101,9 @@ app.configure(function() {
         })
     }));
 
-    app.use(app.router);
+    app.use("/doc", app.router);
 
-    app.use(express.static(__dirname + '/public'));
+    app.use("/doc", express.static(__dirname + '/public'));
 });
 
 app.configure('development', function() {
@@ -592,9 +594,13 @@ app.dynamicHelpers({
 //
 // Routes
 //
+
+
+
 app.get('/', function(req, res) {
     res.render('overview');
 });
+
 
 // Process the API request
 app.post('/processReq', oauth, processRequest, function(req, res) {
@@ -622,17 +628,12 @@ app.post('/upload', function(req, res) {
   res.redirect('back');
 });
 
-app.get('/doc/overview', function(req, res) {
-    res.render('overview');
-});
-
 // API shortname, all lowercase
-//app.get('/doc/:api([^\.]+)', function(req, res) {
-app.get('/doc/reference/:api([^\.]+)', function(req, res) {
+app.get('/reference/:api([^\.]+)', function(req, res) {
     res.render('api');
 });
 
-
+//});
 
 // Only listen on $ node app.js
 

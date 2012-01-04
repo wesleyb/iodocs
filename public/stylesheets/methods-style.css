@@ -177,7 +177,7 @@ li {
 }
 
 .methods {
-  display: none;
+  display: block;
 }
 
 .method {

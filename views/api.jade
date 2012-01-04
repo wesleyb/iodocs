@@ -11,10 +11,10 @@ form#credentials
         section(class='credentials ' + authed)
          - if (authed && apiInfo.oauth)
              span Authenticated with OAuth
-             img(src='/images/accept.png')
+             img(src='/doc/images/accept.png')
          - else
              h3 API Credentials
-               img(src='/images/key.png')
+               img(src='/doc/images/key.png')
 
              - if (apiInfo.oauth)
                  input(type='hidden', name='oauth', value='authrequired')
@@ -40,16 +40,17 @@ form#credentials
                     input(name='oauth', value='Authenticate with OAuth', type='submit', id='oauth-auth')
             div.
               To use the API explorer below, enter the API key provided to you by topics.io (auth_api_key)
-div(id='controls')
-    ul
-        li
-            a#toggle-endpoints(href='#') Toggle All Endpoints
-        li
-            a#toggle-methods(href='#') Toggle All Methods
+//
+  div(id='controls')
+      ul
+          li
+              a#toggle-endpoints(href='#') Toggle All Endpoints
+          li
+              a#toggle-methods(href='#') Toggle All Methods
 
 ul
     - each endpoint in apiDefinition.endpoints
-        li.endpoint
+        li.endpoint.expanded
             h3.title
                 span.name=endpoint.name
                 ul.method-actions
@@ -58,7 +59,7 @@ ul
                     li.expand-methods
                         a(href='#') Expand Methods
             - if (endpoint.methods.length)
-            ul.methods.hidden
+            ul.methods
                 - each method in endpoint.methods
                     - var httpmethod =method.HTTPMethod.toLowerCase()
                     - if (method.RequiresOAuth ==='Y' || method.RequiresOAuth ===true)
