@@ -50,7 +50,7 @@ form#credentials
 
 ul
     - each endpoint in apiDefinition.endpoints
-        li.endpoint.expanded
+        li.endpoint
             h3.title
                 span.name=endpoint.name
                 ul.method-actions
@@ -59,7 +59,7 @@ ul
                     li.expand-methods
                         a(href='#') Expand Methods
             - if (endpoint.methods.length)
-            ul.methods
+            ul.methods.hidden
                 - each method in endpoint.methods
                     - var httpmethod =method.HTTPMethod.toLowerCase()
                     - if (method.RequiresOAuth ==='Y' || method.RequiresOAuth ===true)

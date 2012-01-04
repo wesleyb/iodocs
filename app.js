@@ -34,8 +34,7 @@ var express     = require('express'),
     http        = require('http'),
     redis       = require('redis'),
     RedisStore  = require('connect-redis')(express),
-    hashlib     = require('hashlib'),
-    expressNsp  = require('express-namespace');
+    hashlib     = require('hashlib');
 
 
 // Configuration
