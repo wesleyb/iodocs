@@ -1,21 +1,38 @@
 !!! 5
 html
     head
-        - if (apiInfo.name)
-            - var title = apiInfo.name + ' API Documentation'
-        -else
-            - var title = 'Live Documentation'
-        title=title
+        title Topics.io API documentation
+        meta(name='description', content='Documentation, how to use topics.io API')
+        meta(name='keywords', content='topic, free API, relevant news, news aggregator, curation, documentation')
+
+        link(rel='stylesheet', href='http://static.topics.io/static/css/bootstrap.css')
+        link(rel='stylesheet', href='http://static.topics.io/static/css/topicsio.css')
+        
         link(rel='stylesheet', href='/stylesheets/prettify.css')
-        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/stylesheets/methods-style.css')
 
     body
-        !{body}
-        div(id='io-footer')
-           div(class='f-left') &copy;  
-              a(href='http://mashery.com/io') Mashery, Inc.
-           div(class='f-right') Powered by 
-              a(href='https://github.com/mashery/iodocs') I/O Docs
+        .topbar
+          .fill
+            .container
+              h1
+                a(href='/', class='brand') Topics.io&nbsp;<small>API</small>
+              ul.nav
+                li
+                  a(href='/') Home
+                li(class=(apiDefinition?'':'active'))
+                  a(href='/doc/overview') Overview
+                li(class=(apiDefinition?'active':''))
+                  a(href='/doc/reference/topicsio') API reference
+        .container
+          .content
+            !{body}
+          footer
+            ul
+              li: a(href='#') &copy; Topics.io 2011
+              li: a(href='mailto:contact@mail.topics.io', title='email contact') Contact
+              li: a(href='https://twitter.com/#!/topicsio', target='_blank') Follow us on Twitter
+            
         script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js')
         script(src='/javascripts/json2.js')
         script(src='/javascripts/prettify.js')

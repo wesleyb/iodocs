@@ -593,9 +593,7 @@ app.dynamicHelpers({
 // Routes
 //
 app.get('/', function(req, res) {
-    res.render('listAPIs', {
-        title: config.title
-    });
+    res.render('overview');
 });
 
 // Process the API request
@@ -624,10 +622,17 @@ app.post('/upload', function(req, res) {
   res.redirect('back');
 });
 
+app.get('/doc/overview', function(req, res) {
+    res.render('overview');
+});
+
 // API shortname, all lowercase
-app.get('/:api([^\.]+)', function(req, res) {
+//app.get('/doc/:api([^\.]+)', function(req, res) {
+app.get('/doc/reference/:api([^\.]+)', function(req, res) {
     res.render('api');
 });
+
+
 
 // Only listen on $ node app.js
 

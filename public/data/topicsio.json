@@ -1,0 +1,198 @@
+{
+   "endpoints":[
+      {
+         "name":"Manage topics",
+         "methods":[
+            
+            {
+               "MethodName":"Search topics",
+               "Synopsis":"Returns topics that match a specified query.",
+               "HTTPMethod":"GET",
+               "URI":"/topics/search/v1/",
+               "RequiresOAuth":"N",
+               "parameters":[
+                  {
+                     "Name":"query",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"string",
+                     "Description":"Search query."
+                  },
+                  {
+                     "Name":"entity",
+                     "Required":"N",
+                     "Default":"json",
+                     "Type":"enumerated",
+                     "Description":"Restricts search to the given entity.",
+                     "EnumeratedList":[
+                        "",
+                        "arts",
+                        "arts/literature",
+                        "arts/movies",
+                        "arts/music",
+                        "business",
+                        "computers",
+                        "games",
+                        "health",
+                        "home",
+                        "person",
+                        "recreation",
+                        "scienceAndTech"
+                     ]
+                  },
+                  {
+                     "Name":"page",
+                     "Required":"N",
+                     "Default":"1",
+                     "Type":"int",
+                     "Description":"The page number (starting at 1) to return."
+                  }
+               ]
+            },
+            
+            {
+               "MethodName":"Subscribes a topic",
+               "Synopsis":"Subscribes a topic in order to get news about it.",
+               "HTTPMethod":"POST",
+               "URI":"/topics/:id/subscribe/v1/",
+               "RequiresOAuth":"Y",
+               "parameters":[
+                  {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"int",
+                     "Description":"The unique identifier of the topic to subscribe to."
+                  }
+               ]
+            },
+            
+            {
+               "MethodName":"Unsubscribes a topic",
+               "Synopsis":"Cancel subscription of a topic in order to stop receiving news about it.",
+               "HTTPMethod":"POST",
+               "URI":"/topics/:id/unsubscribe/v1/",
+               "RequiresOAuth":"Y",
+               "parameters":[
+                  {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"int",
+                     "Description":"The unique identifier of the topic to unsubscribe to."
+                  }
+               ]
+            },
+            
+            {
+               "MethodName":" Retrieves subscribed topics",
+               "Synopsis":"Returns all topics you have subscribed.",
+               "HTTPMethod":"GET",
+               "URI":"/topics/v1/",
+               "RequiresOAuth":"Y",
+               "parameters":[
+                  {
+                     "Name":"page",
+                     "Required":"N",
+                     "Default":"1",
+                     "Type":"int",
+                     "Description":"The page number (starting at 1) to return."
+                  }
+               ]
+            },
+            
+            {
+               "MethodName":"Creates a topic",
+               "Synopsis":"Create a new topic. Before creating it be, sur this topics does not already exist with search method.",
+               "HTTPMethod":"POST",
+               "URI":"/topics/v1/",
+               "RequiresOAuth":"Y",
+               "parameters":[
+                  {
+                     "Name":"displayName",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"string",
+                     "Description":"Topic's title."
+                  },
+                  {
+                     "Name":"entity",
+                     "Required":"Y",
+                     "Default":"json",
+                     "Type":"enumerated",
+                     "Description":"Entity related to the topic you are about to create.",
+                     "EnumeratedList":[
+                        "arts",
+                        "arts/literature",
+                        "arts/movies",
+                        "arts/music",
+                        "business",
+                        "computers",
+                        "games",
+                        "health",
+                        "home",
+                        "person",
+                        "recreation",
+                        "scienceAndTech"
+                     ]
+                  }
+               ]
+            }
+            
+            
+            
+            
+
+         ]
+      },
+      {
+         "name":"Retrieves latest news related to topics",
+         "methods":[
+            
+            {
+               "MethodName":"Retrieves news on subscribed topics",
+               "Synopsis":"Returns latest news related to all topics you have subscribed.",
+               "HTTPMethod":"GET",
+               "URI":"/topics/news/v1/",
+               "RequiresOAuth":"Y",
+               "parameters":[
+                  {
+                     "Name":"page",
+                     "Required":"N",
+                     "Default":"1",
+                     "Type":"int",
+                     "Description":"The page number (starting at 1) to return."
+                  }
+               ]
+            },
+            
+            {
+               "MethodName":"Retrieves news for specific a topic",
+               "Synopsis":"Returns latest news related to the given topic.",
+               "HTTPMethod":"GET",
+               "URI":"/topics/:id/news/v1/",
+               "RequiresOAuth":"Y",
+               "parameters":[
+                  {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"int",
+                     "Description":"The unique identifier of the desired topic."
+                  },
+                  {
+                     "Name":"page",
+                     "Required":"N",
+                     "Default":"1",
+                     "Type":"int",
+                     "Description":"The page number (starting at 1) to return."
+                  }
+               ]
+            }
+            
+         ]
+      }
+      
+   ]
+}
+
