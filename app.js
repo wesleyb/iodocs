@@ -100,9 +100,9 @@ app.configure(function() {
         })
     }));
 
-    app.use("/doc", app.router);
+    app.use("/explorer", app.router);
 
-    app.use("/doc", express.static(__dirname + '/public'));
+    app.use("/explorer", express.static(__dirname + '/public'));
 });
 
 app.configure('development', function() {
@@ -571,22 +571,14 @@ app.dynamicHelpers({
         return req.session;
     },
     apiInfo: function(req, res) {
-        if (req.params.api) {
-            return apisConfig[req.params.api];
-        } else {
-            return apisConfig;
-        }
+        return apisConfig['topicsio'];
     },
     apiName: function(req, res) {
-        if (req.params.api) {
-            return req.params.api;
-        }
+        return 'topicsio'
     },
     apiDefinition: function(req, res) {
-        if (req.params.api) {
-            var data = fs.readFileSync('public/data/' + req.params.api + '.json');
-            return JSON.parse(data);
-        }
+        var data = fs.readFileSync('public/data/' + 'topicsio' + '.json');
+        return JSON.parse(data);
     }
 })
 
@@ -597,7 +589,7 @@ app.dynamicHelpers({
 
 
 app.get('/', function(req, res) {
-    res.render('overview');
+    res.render('api');
 });
 
 

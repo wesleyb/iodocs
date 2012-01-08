@@ -11,10 +11,10 @@ form#credentials
         section(class='credentials ' + authed)
          - if (authed && apiInfo.oauth)
              span Authenticated with OAuth
-             img(src='/doc/images/accept.png')
+             img(src='/explorer/images/accept.png')
          - else
              h3 API Credentials
-               img(src='/doc/images/key.png')
+               img(src='/explorer/images/key.png')
 
              - if (apiInfo.oauth)
                  input(type='hidden', name='oauth', value='authrequired')

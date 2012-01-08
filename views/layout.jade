@@ -8,8 +8,8 @@ html
         link(rel='stylesheet', href='http://static.topics.io/static/css/bootstrap.css')
         link(rel='stylesheet', href='http://static.topics.io/static/css/topicsio.css')
         
-        link(rel='stylesheet', href='/doc/stylesheets/prettify.css')
-        link(rel='stylesheet', href='/doc/stylesheets/methods-style.css')
+        link(rel='stylesheet', href='/explorer/stylesheets/prettify.css')
+        link(rel='stylesheet', href='/explorer/stylesheets/methods-style.css')
         
 
         | <script type="text/javascript">
@@ -33,9 +33,9 @@ html
                 li
                   a(href='/') Home
                 li(class=(apiDefinition?'':'active'))
-                  a(href='/doc') Overview
+                  a(href='/overview') Overview
                 li(class=(apiDefinition?'active':''))
-                  a(href='/doc/reference/topicsio') API reference
+                  a(href='/explorer') API reference
         .container
           .content
             !{body}
@@ -46,8 +46,8 @@ html
               li: a(href='https://twitter.com/#!/topicsio', target='_blank') Follow us on Twitter
             
         script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js')
-        script(src='/doc/javascripts/json2.js')
-        script(src='/doc/javascripts/prettify.js')
-        script(src='/doc/javascripts/utilities.js')
-        script(src='/doc/javascripts/livedocs.js')
-        script(src='/doc/javascripts/docs.js')
+        script(src='/explorer/javascripts/json2.js')
+        script(src='/explorer/javascripts/prettify.js')
+        script(src='/explorer/javascripts/utilities.js')
+        script(src='/explorer/javascripts/livedocs.js')
+        script(src='/explorer/javascripts/docs.js')
