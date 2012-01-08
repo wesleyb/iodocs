@@ -5,8 +5,8 @@
          "methods":[
             
             {
-               "MethodName":"Search topics",
-               "Synopsis":"Returns topics that match a specified query.",
+               "MethodName":"Search available topics",
+               "Synopsis":"Return topics that match a specified query.",
                "HTTPMethod":"GET",
                "URI":"/topics/search/v1/",
                "RequiresOAuth":"N",
@@ -51,14 +51,14 @@
             },
             
             {
-               "MethodName":"Subscribes a topic",
-               "Synopsis":"Subscribes a topic in order to get news about it.",
+               "MethodName":"Subscribe a topic",
+               "Synopsis":"Subscribe a topic in order to get news about it.",
                "HTTPMethod":"POST",
-               "URI":"/topics/:id/subscribe/v1/",
+               "URI":"/topics/:topic_id/subscribe/v1/",
                "RequiresOAuth":"Y",
                "parameters":[
                   {
-                     "Name":"id",
+                     "Name":"topic_id",
                      "Required":"Y",
                      "Default":"",
                      "Type":"int",
@@ -68,14 +68,14 @@
             },
             
             {
-               "MethodName":"Unsubscribes a topic",
+               "MethodName":"Unsubscribe a topic",
                "Synopsis":"Cancel subscription of a topic in order to stop receiving news about it.",
-               "HTTPMethod":"POST",
-               "URI":"/topics/:id/unsubscribe/v1/",
+               "HTTPMethod":"DELETE",
+               "URI":"/topics/:topic_id/subscribe/v1/",
                "RequiresOAuth":"Y",
                "parameters":[
                   {
-                     "Name":"id",
+                     "Name":"topic_id",
                      "Required":"Y",
                      "Default":"",
                      "Type":"int",
@@ -85,8 +85,8 @@
             },
             
             {
-               "MethodName":" Retrieves subscribed topics",
-               "Synopsis":"Returns all topics you have subscribed.",
+               "MethodName":"List all your topics",
+               "Synopsis":"Return all topics you have subscribed.",
                "HTTPMethod":"GET",
                "URI":"/topics/v1/",
                "RequiresOAuth":"Y",
@@ -102,7 +102,7 @@
             },
             
             {
-               "MethodName":"Creates a topic",
+               "MethodName":"Create a topic",
                "Synopsis":"Create a new topic. Before creating it be, sur this topics does not already exist with search method.",
                "HTTPMethod":"POST",
                "URI":"/topics/v1/",
@@ -146,12 +146,12 @@
          ]
       },
       {
-         "name":"Retrieves latest news related to topics",
+         "name":"Retrieve latest news related to topics",
          "methods":[
             
             {
-               "MethodName":"Retrieves news on subscribed topics",
-               "Synopsis":"Returns latest news related to all topics you have subscribed.",
+               "MethodName":"Retrieve latest news on all your topics",
+               "Synopsis":"Return latest news related to all topics you have subscribed.",
                "HTTPMethod":"GET",
                "URI":"/topics/news/v1/",
                "RequiresOAuth":"Y",
@@ -167,14 +167,14 @@
             },
             
             {
-               "MethodName":"Retrieves news for specific a topic",
-               "Synopsis":"Returns latest news related to the given topic.",
+               "MethodName":"Retrieve latest news on a topic",
+               "Synopsis":"Return latest news related to the given topic.",
                "HTTPMethod":"GET",
-               "URI":"/topics/:id/news/v1/",
+               "URI":"/topics/:topic_id/news/v1/",
                "RequiresOAuth":"Y",
                "parameters":[
                   {
-                     "Name":"id",
+                     "Name":"topic_id",
                      "Required":"Y",
                      "Default":"",
                      "Type":"int",
