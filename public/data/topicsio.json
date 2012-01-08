@@ -23,7 +23,7 @@
                      "Required":"N",
                      "Default":"json",
                      "Type":"enumerated",
-                     "Description":"Restricts search to the given entity.",
+                     "Description":"Restrict search to the given entity.",
                      "EnumeratedList":[
                         "",
                         "arts",
