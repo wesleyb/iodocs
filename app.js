@@ -311,6 +311,7 @@ function processRequest(req, res, next) {
             host: baseHostUrl,
             port: baseHostPort,
             method: httpMethod,
+            paramString: paramString,
             path: apiConfig.publicPath + methodURL + ((paramString.length > 0) ? '?' + paramString : "")
         };
 
@@ -462,7 +463,10 @@ function processRequest(req, res, next) {
 
         // Add API Key to params, if any.
         if (apiKey != '' && apiKey != 'undefined' && apiKey != undefined) {
-            options.path += '&' + apiConfig.keyParam + '=' + apiKey;
+            if (paramString.length > 0)
+                options.path += '&' + apiConfig.keyParam + '=' + apiKey;
+            else
+                options.path += '?' + apiConfig.keyParam + '=' + apiKey;
         }
 
         // Perform signature routine, if any.

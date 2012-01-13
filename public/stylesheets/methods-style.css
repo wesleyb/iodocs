@@ -8,6 +8,10 @@ textarea {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+#key {
+    width:527px;
+}
+
 .content a, .content a:active, .content a:visited {
 color: #607890;
 text-decoration: underline;

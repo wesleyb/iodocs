@@ -50,6 +50,46 @@
                ]
             },
             
+            
+            {
+               "MethodName":"Create a topic",
+               "Synopsis":"Create a new topic. Before creating it be, sur this topics does not already exist with search method. When you create a topic, you automatically subscibe to it.",
+               "HTTPMethod":"POST",
+               "URI":"/topics/v1/",
+               "RequiresOAuth":"Y",
+               "parameters":[
+                  {
+                     "Name":"displayName",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"string",
+                     "Description":"Topic's title."
+                  },
+                  {
+                     "Name":"entity",
+                     "Required":"Y",
+                     "Default":"json",
+                     "Type":"enumerated",
+                     "Description":"Entity related to the topic you are about to create.",
+                     "EnumeratedList":[
+                        "arts",
+                        "arts/literature",
+                        "arts/movies",
+                        "arts/music",
+                        "business",
+                        "computers",
+                        "games",
+                        "health",
+                        "home",
+                        "person",
+                        "recreation",
+                        "scienceAndTech"
+                     ]
+                  }
+               ]
+            },
+            
+            
             {
                "MethodName":"Subscribe a topic",
                "Synopsis":"Subscribe a topic in order to get news about it.",
@@ -99,47 +139,7 @@
                      "Description":"The page number (starting at 1) to return."
                   }
                ]
-            },
-            
-            {
-               "MethodName":"Create a topic",
-               "Synopsis":"Create a new topic. Before creating it be, sur this topics does not already exist with search method.",
-               "HTTPMethod":"POST",
-               "URI":"/topics/v1/",
-               "RequiresOAuth":"Y",
-               "parameters":[
-                  {
-                     "Name":"displayName",
-                     "Required":"Y",
-                     "Default":"",
-                     "Type":"string",
-                     "Description":"Topic's title."
-                  },
-                  {
-                     "Name":"entity",
-                     "Required":"Y",
-                     "Default":"json",
-                     "Type":"enumerated",
-                     "Description":"Entity related to the topic you are about to create.",
-                     "EnumeratedList":[
-                        "arts",
-                        "arts/literature",
-                        "arts/movies",
-                        "arts/music",
-                        "business",
-                        "computers",
-                        "games",
-                        "health",
-                        "home",
-                        "person",
-                        "recreation",
-                        "scienceAndTech"
-                     ]
-                  }
-               ]
             }
-            
-            
             
             
 
