@@ -35,9 +35,10 @@
                         "games",
                         "health",
                         "home",
-                        "person",
                         "recreation",
-                        "scienceAndTech"
+                        "scienceAndTech",
+                        "society",
+                        "sports"
                      ]
                   },
                   {
@@ -157,11 +158,18 @@
                "RequiresOAuth":"Y",
                "parameters":[
                   {
+                     "Name":"beforeId",
+                     "Required":"N",
+                     "Default":"",
+                     "Type":"string",
+                     "Description":"Retrieve all news after this publish id. Do not combine with 'page' parameter. * For advanced user."
+                  },
+                  {
                      "Name":"page",
                      "Required":"N",
                      "Default":"1",
                      "Type":"int",
-                     "Description":"The page number (starting at 1) to return."
+                     "Description":"The page number (starting at 1) to return. Do not combine with 'beforeId' parameter."
                   }
                ]
             },
@@ -181,11 +189,18 @@
                      "Description":"The unique identifier of the desired topic."
                   },
                   {
+                     "Name":"beforeId",
+                     "Required":"N",
+                     "Default":"",
+                     "Type":"string",
+                     "Description":"Retrieve all news after this publish id. Do not combine with 'page' parameter. * For advanced user."
+                  },
+                  {
                      "Name":"page",
                      "Required":"N",
                      "Default":"1",
                      "Type":"int",
-                     "Description":"The page number (starting at 1) to return."
+                     "Description":"The page number (starting at 1) to return. Do not combine with 'beforeId' parameter."
                   }
                ]
             }
