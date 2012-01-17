@@ -82,9 +82,10 @@
                         "games",
                         "health",
                         "home",
-                        "person",
                         "recreation",
-                        "scienceAndTech"
+                        "scienceAndTech",
+                        "society",
+                        "sports"
                      ]
                   }
                ]
