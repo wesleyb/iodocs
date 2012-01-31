@@ -634,5 +634,5 @@ app.get('/reference/:api([^\.]+)', function(req, res) {
 
 if (!module.parent) {
     app.listen(config.port, config.address);
-    console.log("Express server listening on port %d", app.address().port);
+    console.log("Express server listening on port %d"); //, app.address().port);
 }

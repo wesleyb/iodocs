@@ -31,15 +31,13 @@ html
             .container
               h1
                 a(href='/', class='brand') Topics.io&nbsp;<small>API</small>
-              ul.nav
-                li
-                  a(href='/') Home
-                li(class=(apiDefinition?'':'active'))
-                  a(href='/overview') Overview
-                li(class=(apiDefinition?'active':''))
-                  a(href='/explorer') API reference
         .container
           .content
+            ul(class='breadcrumb')
+              li
+                a(href='/docs') Docs
+                span(class='divider') /
+              li(class='active') API explorer
             !{body}
           footer
             ul
