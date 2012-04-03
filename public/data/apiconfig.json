@@ -1,8 +1,8 @@
 {
     "topicsio": {
-        "name": "Topics.io API",
+        "name": "Newsinapp.io API",
         "protocol": "http",
-        "baseURL": "api.topics.io",
+        "baseURL": "api.newsinapp.io",
         "publicPath": "",
         "auth": "key",
         "keyParam": "auth_api_key"
